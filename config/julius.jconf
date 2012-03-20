@@ -2,8 +2,9 @@
 # Don't add LM nor AM nor SR. They will be created automatically. 
 # Don't modify this file if you are not sure of what are you doing
 # Documentation: http://julius.sourceforge.jp/juliusbook/en/
-
+#-input oss
 -input mic                      # live microphone
+#-input alsa
 -48                            # 48kHz sampling > 16kHz conv. (16kHz only)
 -cutsilence                    # detection on
 -lv 2500                       # level threshold (0-32767)
@@ -33,6 +34,16 @@
 -gram LM/en/face_recog/face_recog
 
 -SR en_face_recog en enface_recog
+
+-LM enquestions
+-gram LM/en/questions/questions
+
+-SR en_questions en enquestions
+
+-LM enreadingEmails
+-gram LM/en/readingEmails/readingEmails
+
+-SR en_readingEmails en enreadingEmails
 
 
 
