@@ -1,0 +1,5 @@
+build dependencies:
+
+julius
+libjulius-dev
+libasound2-dev
