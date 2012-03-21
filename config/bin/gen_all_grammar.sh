@@ -60,10 +60,10 @@ for line in $languages; do
 		YN="Null"
 		while [ $YN = "Null" ]
 		do
-			echo "Do you want to compile this grammar?(y/n)"
                         if [ "$1" == "force" ]; then
                             YN="y"
                         else
+                            echo "Do you want to compile this grammar?(y/n)"
        			    read YN
                         fi
 			if [ "$YN" = "y" -o "$YN" = "Y" ]
