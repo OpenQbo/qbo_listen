@@ -61,7 +61,11 @@ for line in $languages; do
 		while [ $YN = "Null" ]
 		do
 			echo "Do you want to compile this grammar?(y/n)"
-			read YN
+                        if [ "$1" == "force" ]; then
+                            YN="y"
+                        else
+       			    read YN
+                        fi
 			if [ "$YN" = "y" -o "$YN" = "Y" ]
 			then
 				$gengram $lmdir$line/$lm/sentences.conf $amdir$line/phonems $amdir$line/tiedlist $lmdir$line/$lm/$lm
@@ -80,6 +84,10 @@ done
 
 
 cd "$QBO_ROS_PACKAGE_PATH/qbo_apps/qbo_listen/config/bin"
-compileLMs
+if [ "$1" == "-f" ]; then
+    compileLMs "force"
+else
+    compileLMs
+fi
 createConfFile
 
