@@ -3,7 +3,7 @@ Source: qboros-electric-qbo-listen
 Version: 1.0-openqbo0
 Section: OpenQbo
 Priority: standard
-Depends: julius, libjulius-dev, ros-electric-ros
+Depends: julius (=4.1.5.1), libjulius-dev (=4.1.5.1), ros-electric-ros
 Architecture: amd64
 Maintainer: Sergio Merino <s.merino@openqbo.org>
 Homepage: http://openqbo.org/wiki/doku.php?id=qbo_apps:ros_pack:qbo_listen
