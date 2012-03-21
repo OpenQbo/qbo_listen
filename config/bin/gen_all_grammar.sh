@@ -18,6 +18,7 @@ IFS=$'\n'
 languages=`ls -l $lmdir | grep -vi total | awk -F" " '{print $8}'`
 for line in $languages; do
         echo "-AM $line" >> $tmpfile
+        echo "-ssload noiseSpec" >> $tmpfile
         echo "-h $Ramdir$line/hmmdefs" >> $tmpfile
         echo "-hlist $Ramdir$line/tiedlist" >> $tmpfile
 	echo "" >> $tmpfile
