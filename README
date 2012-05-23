@@ -1,9 +1,3 @@
-build dependencies:
-
-julius
-libjulius-dev
-libasound2-dev
-=======
 qbo_listen v1.0
 16-02-2012
 
@@ -11,10 +5,23 @@ qbo_listen v1.0
 
 Copyright (C) 2012 Openqbo Inc.
 
+=== License ===
+
+Qbo_listen  is licensed under the GPL license making it free and open source software.
+
+Qbo_listen License includes a special exception allowing to link to Julius lib. The reason is that, Juliuslib license is, probably, not compatible with the GPL because Julius license is similar to Original BSD License. 
+
+Qbo_listen license includes the same exception of the sstream library http://gcc.gnu.org/onlinedocs/libstdc++/manual/license.html#manual.intro.status.license.gpl
+
 === Description  ===
 
 
 === Building ===
+
+Dependencies:
+    julius
+    libjulius-dev
+    libasound2-dev
 
 rosmake
 

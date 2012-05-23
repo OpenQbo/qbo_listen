@@ -1,11 +1,9 @@
-/* include top Julius library header */
 #include <julius/juliuslib.h>
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include <string>
 #include "qbo_listen/Listened.h"
 #include <sstream>
-//#include <signal.h>
 #include <stdio.h>
 using namespace std;
 const float indiv_threshold = 0.09;
@@ -15,15 +13,7 @@ JCONF_SEARCH *sr;
 char * DefaultSR;
 vector<ros::Publisher> topic_vector;
 bool pause_recog=false;
-/*
-Signal capture callback.
-For ctr+c
-*/
-/*void signalCapture(int sig)
-{
- exit(0);
-}
-*/
+
 
 
 void callback_engine_pause_func(Recog *recog, void *data)
