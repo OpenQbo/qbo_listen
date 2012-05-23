@@ -306,6 +306,9 @@ def main(argv):
 	helpmessage()
 
     else:
+        tmpfiles="/tmp/compilegramm"
+        tmpvoca=tmpfiles+".voca"
+        tmpgramm=tmpfiles+".grammar"
         sentencefile=argv[0]
         phonemfile=argv[1]
         tiedlist=argv[2]
@@ -315,13 +318,13 @@ def main(argv):
 	if vocaerrors==0:
 		print "All vocabulary correct."
                 print "Creating temporal vocabulary and gramma files..."
-		createvoca(sentencefile,phonemfile,"tmp")
+		createvoca(sentencefile,phonemfile,tmpfiles)
 		print "Checking the phonems.."
-		phonemserr=perrors("tmp.voca",tiedlist)
+		phonemserr=perrors(tmpvoca,tiedlist)
 		if phonemserr==0:
 			print "Creating final voca and grammar files..."
-			copyfiles("tmp.voca",destfiles+".voca")
-			copyfiles("tmp.grammar",destfiles+".grammar")
+			copyfiles(tmpvoca,destfiles+".voca")
+			copyfiles(tmpgramm,destfiles+".grammar")
 	                print "Compiling..."
 			subprocess.call(["mkdfa.pl", destfiles])
 			sys.exit(1)

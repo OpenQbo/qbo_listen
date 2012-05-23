@@ -9,3 +9,4 @@ srv_gen
 *.grammar
 *.term
 *.voca
+*.pyc

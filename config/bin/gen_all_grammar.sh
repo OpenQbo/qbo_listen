@@ -1,16 +1,17 @@
 #!/bin/bash
+dir="$ROS_PACKAGE_PATH/qbo_stack/qbo_listen/"
 tmpfile=/var/tmp/juliusdialog.tmp
-amdir=../AM/
-lmdir=../LM/
-tmpfile="tmpfile"
-gengram=./gen_grammar.py
+amdir=$dir/config/AM/
+lmdir=$dir/config/LM/
+tmpfile="/tmp/tmpfile"
+gengram=$dir/config/bin/gen_grammar.py
 
 Ramdir=AM/
 Rlmdir=LM/
 
-preconfigfile=../configfile/default.jconf
+preconfigfile=$dir/config/configfile/default.jconf
 
-finalconfigfile=../julius.jconf
+finalconfigfile=$dir/config/julius.jconf
 
 function createConfFile {
 IFS=$'\n'
