@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/bin/bash
 #
 # Software License Agreement (GPLv2 License)
 #
