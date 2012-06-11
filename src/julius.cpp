@@ -9,6 +9,10 @@
 *See the GNU General Public License for more details.
 *You should have received a copy of the GNU General Public License along with this program. 
 *If not, see <http://www.gnu.org/licenses/>.
+*
+*Under Section 7 of GPL version 3, you are granted additional
+*permissions described in the GCC Runtime Library Exception, version
+*3.1, as published by the Free Software Foundation.
 */
 
 #include <julius/juliuslib.h>
