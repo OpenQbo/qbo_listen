@@ -107,7 +107,7 @@ done
 }
 
 
-cd "$QBO_ROS_PACKAGE_PATH/qbo_apps/qbo_listen/config/bin"
+cd "$ROS_PACKAGE_PATH/qbo_stack/qbo_listen/config/bin"
 if [ "$1" == "-f" ]; then
     compileLMs "force"
 else
