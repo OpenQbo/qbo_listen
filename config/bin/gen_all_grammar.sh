@@ -22,8 +22,9 @@
 # Authors: Sergio Merino <s.merino@openqbo.com>;
 
 dir="$ROS_PACKAGE_PATH/qbo_stack/qbo_listen/"
+acousticdir="/usr/share/qbo-julius-model/"
 tmpfile=/var/tmp/juliusdialog.tmp
-amdir=$dir/config/AM/
+amdir=$acousticdir
 lmdir=$dir/config/LM/
 tmpfile="/tmp/tmpfile"
 gengram=$dir/config/bin/gen_grammar.py
@@ -41,7 +42,7 @@ IFS=$'\n'
 languages=`ls -l $lmdir | grep -vi total | awk -F" " '{print $8}'`
 for line in $languages; do
         echo "-AM $line" >> $tmpfile
-        echo "-ssload noiseSpec" >> $tmpfile
+#        echo "-ssload noiseSpec" >> $tmpfile
         echo "-h $Ramdir$line/hmmdefs" >> $tmpfile
         echo "-hlist $Ramdir$line/tiedlist" >> $tmpfile
 	echo "" >> $tmpfile
