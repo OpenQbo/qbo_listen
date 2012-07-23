@@ -21,7 +21,7 @@
 #
 # Authors: Sergio Merino <s.merino@openqbo.com>;
 
-dir="$ROS_PACKAGE_PATH/qbo_stack/qbo_listen_dev/"
+dir="$ROS_PACKAGE_PATH/qbo_stack/qbo_listen/"
 #dir="$ROS_PACKAGE_PATH/qbo_stack/qbo_listen"
 acousticdir="/usr/share/qbo-julius-model/"
 tmpfile=/var/tmp/juliusdialog.tmp
