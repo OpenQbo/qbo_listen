@@ -22,6 +22,9 @@
 #include "qbo_listen/Listened.h"
 #include <sstream>
 #include <stdio.h>
+#include <ros/package.h>
+
+
 using namespace std;
 const float indiv_threshold = 0.09;
 const float threshold = 0.5;
@@ -369,30 +372,50 @@ main(int argc, char *argv[])
 
   int ret; 
   
+  string param1,param2;
+  int numargs=3;
+  char * arguments[numargs];
+
   if (argc==1)
   {
-    string param1,param2;
-    int numargs=3;
-    char * arguments[numargs];
     ros::NodeHandle nh("~");
     nh.getParam("configfile", param2);
     nh.getParam("config", param1);
     if (param1=="" || param2=="")
     {
-      ROS_ERROR("Unable to run the node, parameters needed, please use the launcher or review julius documentation for parameters info");
-      return -1;
+      param1="-C";
+      param2 = ros::package::getPath("qbo_listen")+"/config/julius.jconf";
+      arguments[0]=argv[0];
+      arguments[1]=(char *)param1.c_str();
+      arguments[2]=(char *)param2.c_str();
     }
-    ROS_INFO("Param1:%s",param1.c_str());
-    ROS_INFO("Param2:%s",param2.c_str());
+    ROS_WARN("Config file: %s",param2.c_str());
     arguments[0]=argv[0];
     arguments[1]=(char *)param1.c_str();
     arguments[2]=(char *)param2.c_str();
     jconf = j_config_load_args_new(numargs,arguments);
   }
+  else if (argc==2)
+  {
+    param1="-C";
+    param2 =argv[1];
+    arguments[0]=argv[0];
+    arguments[1]=(char *)param1.c_str();
+    arguments[2]=(char *)param2.c_str();
+    ROS_WARN("Config file: %s",param2.c_str());
+    jconf = j_config_load_args_new(numargs,arguments);
+  }
+  else if (argc==3)
+  {
+    param2=argv[2];
+    ROS_WARN("Config file: %s",param2.c_str());
+    jconf = j_config_load_args_new(argc, argv);
+  }
   else
   {
     jconf = j_config_load_args_new(argc, argv);
   }
+
   if (jconf == NULL) {                /* error */
     ROS_ERROR("Parameters error.\n");
     ROS_ERROR("Unable to run the node, parameters needed, please use the launcher or review julius documentation for parameters info");
