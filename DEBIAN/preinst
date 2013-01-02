@@ -1,3 +1,4 @@
+#!/bin/bash
 DIRNAME=/opt/ros/electric/stacks/qbo_stack/qbo_listen/config/LM
 if [ -d "$DIRNAME" ]; then
     echo "Doing a backup of LM..."
