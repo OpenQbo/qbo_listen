@@ -1,9 +1,9 @@
-qbo_listen v1.0
-16-02-2012
+qbo_listen v1.3
+02-01-2013
 
 === Copyright ===
 
-Copyright (C) 2012 Thecorpora SL
+Copyright (C) 2012-2013 Thecorpora SL
 
 === License ===
 
@@ -31,6 +31,9 @@ rosmake
 === Arvhive Contents ===
 
 === Changelog ===
+
+qbo_listen v1.3
+	* Added new grammars for qbo_questions
 
 qbo_listen v1.0
 	* First release

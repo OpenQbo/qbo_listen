@@ -1,4 +1,4 @@
-#Copyright (c) 2012 TheCorpora SL
+#Copyright (c) 2012-2013 TheCorpora SL
 #
 #This library is free software; you can redistribute it and/or modify 
 #it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; 
